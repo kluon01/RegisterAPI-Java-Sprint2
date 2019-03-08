@@ -1,6 +1,8 @@
 package edu.uark.models.entities.fieldnames;
 
-public class EmployeeFieldNames {
+import edu.uark.dataaccess.entities.BaseFieldNames;
+
+public class EmployeeFieldNames extends BaseFieldNames {
 	public static final String EMPLOYEE_ID = "employeeid";
 	public static final String FIRST_NAME = "firstname";
 	public static final String LAST_NAME = "lastname";

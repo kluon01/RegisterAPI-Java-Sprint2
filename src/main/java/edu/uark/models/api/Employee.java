@@ -110,7 +110,7 @@ public class Employee {
 		this.createdOn = employeeEntity.getCreatedOn();
 		this.firstName = employeeEntity.getFirstName();
 		this.managerId = employeeEntity.getManagerId();
-		this.employeeId = employeeEntity.getEmployeeId();
+		this.employeeId = employeeEntity.getEmployeeIdAsString();
 		this.classification = employeeEntity.getClassification().getValue();
 	}
 }

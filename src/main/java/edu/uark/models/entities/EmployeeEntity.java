@@ -19,38 +19,35 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	@Override
 	protected void fillFromRecord(ResultSet rs) throws SQLException {
 		this.active = rs.getBoolean(EmployeeFieldNames.ACTIVE);
-		this.password = rs.getString(EmployeeFieldNames.PASSWORD);
 		this.lastName = rs.getString(EmployeeFieldNames.LAST_NAME);
+		this.employeeId = rs.getInt(EmployeeFieldNames.EMPLOYEE_ID);
 		this.firstName = rs.getString(EmployeeFieldNames.FIRST_NAME);
-		this.employeeId = rs.getString(EmployeeFieldNames.EMPLOYEE_ID);
 		this.managerId = ((UUID) rs.getObject(EmployeeFieldNames.MANAGER_ID));
+		this.password = new String((byte[]) rs.getObject(EmployeeFieldNames.PASSWORD));
 		this.classification = EmployeeClassification.map(rs.getInt(EmployeeFieldNames.CLASSIFICATION));
 	}
 
 	@Override
 	protected Map<String, Object> fillRecord(Map<String, Object> record) {
 		record.put(EmployeeFieldNames.ACTIVE, this.active);
-		record.put(EmployeeFieldNames.PASSWORD, this.password);
 		record.put(EmployeeFieldNames.LAST_NAME, this.lastName);
 		record.put(EmployeeFieldNames.FIRST_NAME, this.firstName);
 		record.put(EmployeeFieldNames.MANAGER_ID, this.managerId);
-		record.put(EmployeeFieldNames.EMPLOYEE_ID, this.employeeId);
+		record.put(EmployeeFieldNames.PASSWORD, this.password.getBytes());
 		record.put(EmployeeFieldNames.CLASSIFICATION, this.classification.getValue());
 
 		return record;
 	}
 
-	private String employeeId;
-	public String getEmployeeId() {
+	private int employeeId;
+	public int getEmployeeId() {
 		return this.employeeId;
 	}
-	public EmployeeEntity setEmployeeId(String employeeId) {
-		if (!StringUtils.equals(this.employeeId, employeeId)) {
-			this.employeeId = employeeId;
-			this.propertyChanged(EmployeeFieldNames.EMPLOYEE_ID);
-		}
-		
-		return this;
+	public String getEmployeeIdAsString() {
+		return StringUtils.leftPad(
+			Integer.toString(this.employeeId),
+			EMPLOYEE_ID_LENGTH, '0'
+		);
 	}
 
 	private String firstName;
@@ -145,8 +142,8 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		
 		apiEmployee.setId(this.getId());
 		apiEmployee.setPassword(StringUtils.EMPTY); //Only send the password over the network when modifying the database.
-		apiEmployee.setEmployeeId(this.employeeId); //The employee ID may not be changed from a client.
 		apiEmployee.setCreatedOn(this.getCreatedOn());
+		apiEmployee.setEmployeeId(this.getEmployeeIdAsString()); //The employee ID may not be changed from a client.
 		
 		return apiEmployee;
 	}
@@ -165,15 +162,17 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		return hashedPassword;
 	}
 	
+	private static final int EMPLOYEE_ID_LENGTH = 5;
+	
 	public EmployeeEntity() {
 		super(DatabaseTable.EMPLOYEE);
 		
 		this.active = false;
+		this.employeeId = -1;
 		this.managerId = new UUID(0, 0);
 		this.lastName = StringUtils.EMPTY;
 		this.password = StringUtils.EMPTY;
 		this.firstName = StringUtils.EMPTY;
-		this.employeeId = StringUtils.EMPTY;
 		this.classification = EmployeeClassification.NOT_DEFINED;
 	}
 
@@ -184,9 +183,15 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.lastName = apiEmployee.getLastName();
 		this.firstName = apiEmployee.getFirstName();
 		this.managerId = apiEmployee.getManagerId();
-		this.employeeId = apiEmployee.getEmployeeId();
 		this.classification = EmployeeClassification.map(apiEmployee.getClassification());
 		this.password = EmployeeEntity.hashPassword(
-			apiEmployee.getPassword());
+			apiEmployee.getPassword()
+		);
+
+		try {
+			this.employeeId = Integer.parseInt(apiEmployee.getEmployeeId());
+		} catch (NumberFormatException e) {
+			this.employeeId = -1;
+		}
 	}
 }

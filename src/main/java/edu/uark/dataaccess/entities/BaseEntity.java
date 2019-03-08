@@ -123,13 +123,13 @@ public abstract class BaseEntity<T extends BaseEntity<T>> {
 		ResultSet rs = ps.executeQuery();
 
 		rs.next();
-		this.id = ((UUID) rs.getObject(BaseFieldNames.ID));
-		this.createdOn = rs.getTimestamp(BaseFieldNames.CREATED_ON).toLocalDateTime();
+		
+		this.load(rs);
 	}
 
 	private final static String INSERT_PREAMBLE = "INSERT INTO ";
 	private final static String INSERT_VALUES_PREAMBLE = " VALUES (";
-	private final static String INSERT_RETURINGING_PREAMBLE = " RETURNING ";
+	private final static String INSERT_RETURINGING_PREAMBLE = " RETURNING *";
 
 	private PreparedStatement buildInsertStatement(Map<String, Object> record, Connection connection) throws SQLException {
 		LinkedList<Object> values = new LinkedList<Object>();
@@ -157,8 +157,7 @@ public abstract class BaseEntity<T extends BaseEntity<T>> {
 		paramsBuilder.append(")");
 
 		insertBuilder.append(fieldsBuilder).append(paramsBuilder)
-			.append(INSERT_RETURINGING_PREAMBLE).append(BaseFieldNames.ID)
-			.append(", ").append(BaseFieldNames.CREATED_ON);
+			.append(INSERT_RETURINGING_PREAMBLE);
 
 		int keyIndex = 1;
 		PreparedStatement ps = connection.prepareStatement(insertBuilder.toString());
