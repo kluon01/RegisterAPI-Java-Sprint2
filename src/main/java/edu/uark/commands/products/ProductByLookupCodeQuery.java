@@ -12,15 +12,20 @@ import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
 
 public class ProductByLookupCodeQuery implements ResultCommandInterface<Product> {
 	@Override
-	public Product execute() {
-		if (StringUtils.isBlank(this.lookupCode)) {
+	public Product execute()
+	{
+		if (StringUtils.isBlank(this.lookupCode))
+		{
 			throw new UnprocessableEntityException("lookupcode");
 		}
 		
 		ProductEntity productEntity = this.productRepository.byLookupCode(this.lookupCode);
-		if (productEntity != null) {
+		if (productEntity != null)
+		{
 			return new Product(productEntity);
-		} else {
+		}
+		else
+		{
 			throw new NotFoundException("Product");
 		}
 	}
@@ -30,7 +35,8 @@ public class ProductByLookupCodeQuery implements ResultCommandInterface<Product>
 	public String getLookupCode() {
 		return this.lookupCode;
 	}
-	public ProductByLookupCodeQuery setLookupCode(String lookupCode) {
+	public ProductByLookupCodeQuery setLookupCode(String lookupCode)
+	{
 		this.lookupCode = lookupCode;
 		return this;
 	}
@@ -39,7 +45,8 @@ public class ProductByLookupCodeQuery implements ResultCommandInterface<Product>
 	public ProductRepositoryInterface getProductRepository() {
 		return this.productRepository;
 	}
-	public ProductByLookupCodeQuery setProductRepository(ProductRepositoryInterface productRepository) {
+	public ProductByLookupCodeQuery setProductRepository(ProductRepositoryInterface productRepository)
+	{
 		this.productRepository = productRepository;
 		return this;
 	}

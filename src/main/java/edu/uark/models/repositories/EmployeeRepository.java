@@ -11,9 +11,11 @@ import edu.uark.models.entities.EmployeeEntity;
 import edu.uark.models.entities.fieldnames.EmployeeFieldNames;
 import edu.uark.models.repositories.interfaces.EmployeeRepositoryInterface;
 
-public class EmployeeRepository extends BaseRepository<EmployeeEntity> implements EmployeeRepositoryInterface {
+public class EmployeeRepository extends BaseRepository<EmployeeEntity> implements EmployeeRepositoryInterface
+{
 	@Override
-	public boolean employeeIdExists(String employeeId) {
+	public boolean employeeIdExists(String employeeId)
+	{
 		return this.existsWhere(
 			new WhereContainer(
 				(new WhereClause())
@@ -32,7 +34,8 @@ public class EmployeeRepository extends BaseRepository<EmployeeEntity> implement
 	}
 	
 	@Override
-	public EmployeeEntity byEmployeeId(int employeeId) {
+	public EmployeeEntity byEmployeeId(int employeeId)
+	{
 		return this.firstOrDefaultWhere(
 			new WhereContainer(
 				(new WhereClause())
@@ -51,7 +54,8 @@ public class EmployeeRepository extends BaseRepository<EmployeeEntity> implement
 	}
 	
 	@Override
-	public boolean activeExists() {
+	public boolean activeExists()
+	{
 		return this.existsWhere(
 			new WhereContainer(
 				(new WhereClause())

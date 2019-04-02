@@ -17,18 +17,23 @@ public class EmployeeSignInCommand implements ResultCommandInterface<Employee> {
 		int employeeId = -1;
 
 		//Validations
-		if (StringUtils.isBlank(this.employeeSignIn.getEmployeeId())) {
+		if (StringUtils.isBlank(this.employeeSignIn.getEmployeeId()))
+		{
 			throw new UnprocessableEntityException("employee ID");
 		}
-		try {
+		try
+		{
 			employeeId = Integer.parseInt(this.employeeSignIn.getEmployeeId());
-		} catch (NumberFormatException e) {
+		}
+		catch (NumberFormatException e)
+		{
 			throw new UnprocessableEntityException("employee ID");
 		}
 		
 		EmployeeEntity employeeEntity = this.employeeRepository.byEmployeeId(employeeId);
 
-		if ((employeeEntity == null) || !employeeEntity.getPassword().equals(EmployeeEntity.hashPassword(this.employeeSignIn.getPassword()))) {
+		if ((employeeEntity == null) || !employeeEntity.getPassword().equals(EmployeeEntity.hashPassword(this.employeeSignIn.getPassword())))
+		{
 			throw new UnauthorizedException();
 		}
 
@@ -40,7 +45,8 @@ public class EmployeeSignInCommand implements ResultCommandInterface<Employee> {
 	public EmployeeSignIn getEmployeeSignIn() {
 		return this.employeeSignIn;
 	}
-	public EmployeeSignInCommand setEmployeeSignIn(EmployeeSignIn employeeSignIn) {
+	public EmployeeSignInCommand setEmployeeSignIn(EmployeeSignIn employeeSignIn)
+	{
 		this.employeeSignIn = employeeSignIn;
 		return this;
 	}
@@ -49,12 +55,14 @@ public class EmployeeSignInCommand implements ResultCommandInterface<Employee> {
 	public EmployeeRepositoryInterface getProductRepository() {
 		return this.employeeRepository;
 	}
-	public EmployeeSignInCommand setProductRepository(EmployeeRepositoryInterface employeeRepository) {
+	public EmployeeSignInCommand setProductRepository(EmployeeRepositoryInterface employeeRepository)
+	{
 		this.employeeRepository = employeeRepository;
 		return this;
 	}
 	
-	public EmployeeSignInCommand() {
+	public EmployeeSignInCommand()
+	{
 		this.employeeSignIn = new EmployeeSignIn();
 		this.employeeRepository = new EmployeeRepository();
 	}

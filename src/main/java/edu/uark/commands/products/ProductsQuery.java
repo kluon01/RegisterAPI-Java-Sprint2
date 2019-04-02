@@ -10,7 +10,8 @@ import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
 
 public class ProductsQuery implements ResultCommandInterface<List<Product>> {
 	@Override
-	public List<Product> execute() {
+	public List<Product> execute()
+	{
 		return this.productRepository.
 			all().
 			stream().
@@ -23,7 +24,8 @@ public class ProductsQuery implements ResultCommandInterface<List<Product>> {
 	public ProductRepositoryInterface getProductRepository() {
 		return this.productRepository;
 	}
-	public ProductsQuery setProductRepository(ProductRepositoryInterface productRepository) {
+	public ProductsQuery setProductRepository(ProductRepositoryInterface productRepository)
+	{
 		this.productRepository = productRepository;
 		return this;
 	}

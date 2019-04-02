@@ -5,10 +5,13 @@ import edu.uark.controllers.exceptions.NotFoundException;
 import edu.uark.models.repositories.EmployeeRepository;
 import edu.uark.models.repositories.interfaces.EmployeeRepositoryInterface;
 
-public class ActiveEmployeeExistsQuery implements VoidCommandInterface {
+public class ActiveEmployeeExistsQuery implements VoidCommandInterface
+{
 	@Override
-	public void execute() {
-		if (!this.employeeRepository.activeExists()) {
+	public void execute()
+	{
+		if (!this.employeeRepository.activeExists())
+		{
 			throw new NotFoundException("Employee");
 		}
 	}
@@ -17,7 +20,8 @@ public class ActiveEmployeeExistsQuery implements VoidCommandInterface {
 	public EmployeeRepositoryInterface getProductRepository() {
 		return this.employeeRepository;
 	}
-	public ActiveEmployeeExistsQuery setProductRepository(EmployeeRepositoryInterface employeeRepository) {
+	public ActiveEmployeeExistsQuery setProductRepository(EmployeeRepositoryInterface employeeRepository)
+	{
 		this.employeeRepository = employeeRepository;
 		return this;
 	}

@@ -15,9 +15,11 @@ import edu.uark.models.api.Employee;
 import edu.uark.models.entities.fieldnames.EmployeeFieldNames;
 import edu.uark.models.enums.EmployeeClassification;
 
-public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
+public class EmployeeEntity extends BaseEntity<EmployeeEntity>
+{
 	@Override
-	protected void fillFromRecord(ResultSet rs) throws SQLException {
+	protected void fillFromRecord(ResultSet rs) throws SQLException
+	{
 		this.active = rs.getBoolean(EmployeeFieldNames.ACTIVE);
 		this.lastName = rs.getString(EmployeeFieldNames.LAST_NAME);
 		this.employeeId = rs.getInt(EmployeeFieldNames.EMPLOYEE_ID);
@@ -28,7 +30,8 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	}
 
 	@Override
-	protected Map<String, Object> fillRecord(Map<String, Object> record) {
+	protected Map<String, Object> fillRecord(Map<String, Object> record)
+	{
 		record.put(EmployeeFieldNames.ACTIVE, this.active);
 		record.put(EmployeeFieldNames.LAST_NAME, this.lastName);
 		record.put(EmployeeFieldNames.FIRST_NAME, this.firstName);
@@ -43,7 +46,8 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	public int getEmployeeId() {
 		return this.employeeId;
 	}
-	public String getEmployeeIdAsString() {
+	public String getEmployeeIdAsString()
+	{
 		return StringUtils.leftPad(
 			Integer.toString(this.employeeId),
 			EMPLOYEE_ID_LENGTH, '0'
@@ -54,8 +58,10 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	public String getFirstName() {
 		return this.firstName;
 	}
-	public EmployeeEntity setFirstName(String firstName) {
-		if (!StringUtils.equals(this.firstName, firstName)) {
+	public EmployeeEntity setFirstName(String firstName)
+	{
+		if (!StringUtils.equals(this.firstName, firstName))
+		{
 			this.firstName = firstName;
 			this.propertyChanged(EmployeeFieldNames.FIRST_NAME);
 		}
@@ -67,8 +73,10 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	public String getLastName() {
 		return this.lastName;
 	}
-	public EmployeeEntity setLastName(String lastName) {
-		if (!StringUtils.equals(this.lastName, lastName)) {
+	public EmployeeEntity setLastName(String lastName)
+	{
+		if (!StringUtils.equals(this.lastName, lastName))
+		{
 			this.lastName = lastName;
 			this.propertyChanged(EmployeeFieldNames.LAST_NAME);
 		}
@@ -93,8 +101,10 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	public boolean getActive() {
 		return this.active;
 	}
-	public EmployeeEntity setActive(boolean active) {
-		if (this.active != active) {
+	public EmployeeEntity setActive(boolean active)
+	{
+		if (this.active != active)
+		{
 			this.active = active;
 			this.propertyChanged(EmployeeFieldNames.ACTIVE);
 		}
@@ -106,8 +116,10 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	public EmployeeClassification getClassification() {
 		return this.classification;
 	}
-	public EmployeeEntity setClassification(EmployeeClassification classification) {
-		if (this.classification != classification) {
+	public EmployeeEntity setClassification(EmployeeClassification classification)
+	{
+		if (this.classification != classification)
+		{
 			this.classification = classification;
 			this.propertyChanged(EmployeeFieldNames.CLASSIFICATION);
 		}
@@ -119,8 +131,10 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	public UUID getManagerId() {
 		return this.managerId;
 	}
-	public EmployeeEntity setManagerId(UUID managerId) {
-		if (!this.managerId.equals(managerId)) {
+	public EmployeeEntity setManagerId(UUID managerId)
+	{
+		if (!this.managerId.equals(managerId))
+		{
 			this.managerId = managerId;
 			this.propertyChanged(EmployeeFieldNames.MANAGER_ID);
 		}
@@ -128,13 +142,15 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		return this;
 	}
 	
-	public Employee synchronize(Employee apiEmployee) {
+	public Employee synchronize(Employee apiEmployee)
+	{
 		this.setActive(apiEmployee.getActive());
 		this.setLastName(apiEmployee.getLastName());
 		this.setFirstName(apiEmployee.getFirstName());
 		this.setManagerId(apiEmployee.getManagerId());
 		this.setClassification(EmployeeClassification.map(apiEmployee.getClassification()));
-		if (!StringUtils.isBlank(apiEmployee.getPassword())) {
+		if (!StringUtils.isBlank(apiEmployee.getPassword()))
+		{
 			this.setPassword(
 				EmployeeEntity.hashPassword(
 					apiEmployee.getPassword()));
@@ -148,14 +164,18 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		return apiEmployee;
 	}
 	
-	public static String hashPassword(String password) {
+	public static String hashPassword(String password)
+	{
 		String hashedPassword;
 
-		try {
+		try
+		{
 			MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
 			messageDigest.update(password.getBytes());
 			hashedPassword = new String(messageDigest.digest());
-		} catch (NoSuchAlgorithmException e) {
+		}
+		catch (NoSuchAlgorithmException e)
+		{
 			hashedPassword = StringUtils.EMPTY;
 		}
 		
@@ -164,7 +184,8 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	
 	private static final int EMPLOYEE_ID_LENGTH = 5;
 	
-	public EmployeeEntity() {
+	public EmployeeEntity()
+	{
 		super(DatabaseTable.EMPLOYEE);
 		
 		this.active = false;
@@ -176,7 +197,8 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.classification = EmployeeClassification.NOT_DEFINED;
 	}
 
-	public EmployeeEntity(Employee apiEmployee) {
+	public EmployeeEntity(Employee apiEmployee)
+	{
 		super(DatabaseTable.EMPLOYEE);
 		
 		this.active = apiEmployee.getActive();
@@ -188,9 +210,12 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 			apiEmployee.getPassword()
 		);
 
-		try {
+		try
+		{
 			this.employeeId = Integer.parseInt(apiEmployee.getEmployeeId());
-		} catch (NumberFormatException e) {
+		}
+		catch (NumberFormatException e)
+		{
 			this.employeeId = -1;
 		}
 	}

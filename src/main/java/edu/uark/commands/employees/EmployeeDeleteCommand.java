@@ -8,11 +8,15 @@ import edu.uark.models.entities.EmployeeEntity;
 import edu.uark.models.repositories.EmployeeRepository;
 import edu.uark.models.repositories.interfaces.EmployeeRepositoryInterface;
 
-public class EmployeeDeleteCommand implements VoidCommandInterface {
+public class EmployeeDeleteCommand implements VoidCommandInterface
+{
 	@Override
-	public void execute() {
+	public void execute()
+	{
 		EmployeeEntity employeeEntity = this.employeeRepository.get(this.employeeId);
-		if (employeeEntity == null) { //No record with the associated record ID exists in the database.
+		if (employeeEntity == null)
+		{
+			//No record with the associated record ID exists in the database.
 			throw new NotFoundException("Employee");
 		}
 		
@@ -24,7 +28,8 @@ public class EmployeeDeleteCommand implements VoidCommandInterface {
 	public UUID getEmployeeId() {
 		return this.employeeId;
 	}
-	public EmployeeDeleteCommand setEmployeeId(UUID employeeId) {
+	public EmployeeDeleteCommand setEmployeeId(UUID employeeId)
+	{
 		this.employeeId = employeeId;
 		return this;
 	}
@@ -33,7 +38,8 @@ public class EmployeeDeleteCommand implements VoidCommandInterface {
 	public EmployeeRepositoryInterface getEmployeeRepository() {
 		return this.employeeRepository;
 	}
-	public EmployeeDeleteCommand setEmployeeRepository(EmployeeRepositoryInterface employeeRepository) {
+	public EmployeeDeleteCommand setEmployeeRepository(EmployeeRepositoryInterface employeeRepository)
+	{
 		this.employeeRepository = employeeRepository;
 		return this;
 	}

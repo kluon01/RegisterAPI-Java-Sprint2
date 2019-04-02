@@ -10,9 +10,12 @@ import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
 
 public class ProductDeleteCommand implements VoidCommandInterface {
 	@Override
-	public void execute() {
+	public void execute()
+	{
 		ProductEntity productEntity = this.productRepository.get(this.productId);
-		if (productEntity == null) { //No record with the associated record ID exists in the database.
+		if (productEntity == null)
+		{
+			//No record with the associated record ID exists in the database.
 			throw new NotFoundException("Product");
 		}
 		
@@ -24,7 +27,8 @@ public class ProductDeleteCommand implements VoidCommandInterface {
 	public UUID getProductId() {
 		return this.productId;
 	}
-	public ProductDeleteCommand setProductId(UUID productId) {
+	public ProductDeleteCommand setProductId(UUID productId)
+	{
 		this.productId = productId;
 		return this;
 	}
@@ -33,7 +37,8 @@ public class ProductDeleteCommand implements VoidCommandInterface {
 	public ProductRepositoryInterface getProductRepository() {
 		return this.productRepository;
 	}
-	public ProductDeleteCommand setProductRepository(ProductRepositoryInterface productRepository) {
+	public ProductDeleteCommand setProductRepository(ProductRepositoryInterface productRepository)
+	{
 		this.productRepository = productRepository;
 		return this;
 	}

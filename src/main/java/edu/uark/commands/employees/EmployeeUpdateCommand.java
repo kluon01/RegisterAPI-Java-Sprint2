@@ -14,17 +14,22 @@ import edu.uark.models.repositories.interfaces.EmployeeRepositoryInterface;
 
 public class EmployeeUpdateCommand implements ResultCommandInterface<Employee> {
 	@Override
-	public Employee execute() {
+	public Employee execute()
+	{
 		//Validations
-		if (StringUtils.isBlank(this.apiEmployee.getFirstName())) {
+		if (StringUtils.isBlank(this.apiEmployee.getFirstName()))
+		{
 			throw new UnprocessableEntityException("first name");
 		}
-		if (StringUtils.isBlank(this.apiEmployee.getLastName())) {
+		if (StringUtils.isBlank(this.apiEmployee.getLastName()))
+		{
 			throw new UnprocessableEntityException("last name");
 		}
 
 		EmployeeEntity employeeEntity = this.employeeRepository.get(this.employeeId);
-		if (employeeEntity == null) { //No record with the associated record ID exists in the database.
+		if (employeeEntity == null)
+		{
+			//No record with the associated record ID exists in the database.
 			throw new NotFoundException("Employee");
 		}
 		
@@ -40,7 +45,8 @@ public class EmployeeUpdateCommand implements ResultCommandInterface<Employee> {
 	public UUID getEmployeeId() {
 		return this.employeeId;
 	}
-	public EmployeeUpdateCommand setEmployeeId(UUID employeeId) {
+	public EmployeeUpdateCommand setEmployeeId(UUID employeeId)
+	{
 		this.employeeId = employeeId;
 		return this;
 	}
@@ -49,7 +55,8 @@ public class EmployeeUpdateCommand implements ResultCommandInterface<Employee> {
 	public Employee getApiEmployee() {
 		return this.apiEmployee;
 	}
-	public EmployeeUpdateCommand setApiEmployee(Employee apiEmployee) {
+	public EmployeeUpdateCommand setApiEmployee(Employee apiEmployee)
+	{
 		this.apiEmployee = apiEmployee;
 		return this;
 	}
@@ -58,7 +65,8 @@ public class EmployeeUpdateCommand implements ResultCommandInterface<Employee> {
 	public EmployeeRepositoryInterface getEmployeeRepository() {
 		return this.employeeRepository;
 	}
-	public EmployeeUpdateCommand setEmployeeRepository(EmployeeRepositoryInterface employeeRepository) {
+	public EmployeeUpdateCommand setEmployeeRepository(EmployeeRepositoryInterface employeeRepository)
+	{
 		this.employeeRepository = employeeRepository;
 		return this;
 	}

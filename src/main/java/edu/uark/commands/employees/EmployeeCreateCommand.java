@@ -9,17 +9,22 @@ import edu.uark.models.entities.EmployeeEntity;
 import edu.uark.models.repositories.EmployeeRepository;
 import edu.uark.models.repositories.interfaces.EmployeeRepositoryInterface;
 
-public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
+public class EmployeeCreateCommand implements ResultCommandInterface<Employee>
+{
 	@Override
-	public Employee execute() {
+	public Employee execute()
+	{
 		//Validations
-		if (StringUtils.isBlank(this.apiEmployee.getFirstName())) {
+		if (StringUtils.isBlank(this.apiEmployee.getFirstName()))
+		{
 			throw new UnprocessableEntityException("first name");
 		}
-		if (StringUtils.isBlank(this.apiEmployee.getLastName())) {
+		if (StringUtils.isBlank(this.apiEmployee.getLastName()))
+		{
 			throw new UnprocessableEntityException("last name");
 		}
-		if (StringUtils.isBlank(this.apiEmployee.getPassword())) {
+		if (StringUtils.isBlank(this.apiEmployee.getPassword()))
+		{
 			throw new UnprocessableEntityException("password");
 		}
 		
@@ -39,7 +44,8 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 	public Employee getApiEmployee() {
 		return this.apiEmployee;
 	}
-	public EmployeeCreateCommand setApiEmployee(Employee apiEmployee) {
+	public EmployeeCreateCommand setApiEmployee(Employee apiEmployee)
+	{
 		this.apiEmployee = apiEmployee;
 		return this;
 	}
@@ -48,7 +54,8 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 	public EmployeeRepositoryInterface getEmployeeRepository() {
 		return this.employeeRepository;
 	}
-	public EmployeeCreateCommand setEmployeeRepository(EmployeeRepositoryInterface employeeRepository) {
+	public EmployeeCreateCommand setEmployeeRepository(EmployeeRepositoryInterface employeeRepository)
+	{
 		this.employeeRepository = employeeRepository;
 		return this;
 	}

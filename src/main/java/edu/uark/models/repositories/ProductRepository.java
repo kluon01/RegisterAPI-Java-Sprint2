@@ -14,7 +14,8 @@ import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
 
 public class ProductRepository extends BaseRepository<ProductEntity> implements ProductRepositoryInterface {
 	@Override
-	public ProductEntity byLookupCode(String lookupCode) {
+	public ProductEntity byLookupCode(String lookupCode)
+	{
 		return this.firstOrDefaultWhere(
 			new WhereContainer(
 				(new WhereClause()).

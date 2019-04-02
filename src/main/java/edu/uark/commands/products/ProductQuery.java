@@ -11,11 +11,15 @@ import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
 
 public class ProductQuery implements ResultCommandInterface<Product> {
 	@Override
-	public Product execute() {
+	public Product execute()
+	{
 		ProductEntity productEntity = this.productRepository.get(this.productId);
-		if (productEntity != null) {
+		if (productEntity != null)
+		{
 			return new Product(productEntity);
-		} else {
+		}
+		else
+		{
 			throw new NotFoundException("Product");
 		}
 	}
@@ -25,7 +29,8 @@ public class ProductQuery implements ResultCommandInterface<Product> {
 	public UUID getProductId() {
 		return this.productId;
 	}
-	public ProductQuery setProductId(UUID productId) {
+	public ProductQuery setProductId(UUID productId)
+	{
 		this.productId = productId;
 		return this;
 	}
@@ -34,7 +39,8 @@ public class ProductQuery implements ResultCommandInterface<Product> {
 	public ProductRepositoryInterface getProductRepository() {
 		return this.productRepository;
 	}
-	public ProductQuery setProductRepository(ProductRepositoryInterface productRepository) {
+	public ProductQuery setProductRepository(ProductRepositoryInterface productRepository)
+	{
 		this.productRepository = productRepository;
 		return this;
 	}

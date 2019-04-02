@@ -9,13 +9,18 @@ import edu.uark.models.entities.EmployeeEntity;
 import edu.uark.models.repositories.EmployeeRepository;
 import edu.uark.models.repositories.interfaces.EmployeeRepositoryInterface;
 
-public class EmployeeQuery implements ResultCommandInterface<Employee> {
+public class EmployeeQuery implements ResultCommandInterface<Employee>
+{
 	@Override
-	public Employee execute() {
+	public Employee execute()
+	{
 		EmployeeEntity employeeEntity = this.employeeRepository.get(this.employeeId);
-		if (employeeEntity != null) {
+		if (employeeEntity != null)
+		{
 			return new Employee(employeeEntity);
-		} else {
+		}
+		else
+		{
 			throw new NotFoundException("Employee");
 		}
 	}
@@ -25,7 +30,8 @@ public class EmployeeQuery implements ResultCommandInterface<Employee> {
 	public UUID getEmployeeId() {
 		return this.employeeId;
 	}
-	public EmployeeQuery setEmployeeId(UUID employeeId) {
+	public EmployeeQuery setEmployeeId(UUID employeeId)
+	{
 		this.employeeId = employeeId;
 		return this;
 	}
@@ -34,7 +40,8 @@ public class EmployeeQuery implements ResultCommandInterface<Employee> {
 	public EmployeeRepositoryInterface getProductRepository() {
 		return this.employeeRepository;
 	}
-	public EmployeeQuery setProductRepository(EmployeeRepositoryInterface employeeRepository) {
+	public EmployeeQuery setProductRepository(EmployeeRepositoryInterface employeeRepository)
+	{
 		this.employeeRepository = employeeRepository;
 		return this;
 	}

@@ -12,14 +12,17 @@ import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
 
 public class ProductCreateCommand implements ResultCommandInterface<Product> {
 	@Override
-	public Product execute() {
+	public Product execute()
+	{
 		//Validations
-		if (StringUtils.isBlank(this.apiProduct.getLookupCode())) {
+		if (StringUtils.isBlank(this.apiProduct.getLookupCode()))
+		{
 			throw new UnprocessableEntityException("lookupcode");
 		}
 
 		ProductEntity productEntity = this.productRepository.byLookupCode(this.apiProduct.getLookupCode());
-		if (productEntity != null) {
+		if (productEntity != null)
+		{
 			throw new ConflictException("lookupcode"); //Lookupcode already defined for another product.
 		}
 		
@@ -38,7 +41,8 @@ public class ProductCreateCommand implements ResultCommandInterface<Product> {
 	public Product getApiProduct() {
 		return this.apiProduct;
 	}
-	public ProductCreateCommand setApiProduct(Product apiProduct) {
+	public ProductCreateCommand setApiProduct(Product apiProduct)
+	{
 		this.apiProduct = apiProduct;
 		return this;
 	}
@@ -47,7 +51,8 @@ public class ProductCreateCommand implements ResultCommandInterface<Product> {
 	public ProductRepositoryInterface getProductRepository() {
 		return this.productRepository;
 	}
-	public ProductCreateCommand setProductRepository(ProductRepositoryInterface productRepository) {
+	public ProductCreateCommand setProductRepository(ProductRepositoryInterface productRepository)
+	{
 		this.productRepository = productRepository;
 		return this;
 	}

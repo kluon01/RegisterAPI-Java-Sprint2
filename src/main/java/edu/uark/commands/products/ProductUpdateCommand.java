@@ -14,14 +14,18 @@ import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
 
 public class ProductUpdateCommand implements ResultCommandInterface<Product> {
 	@Override
-	public Product execute() {
+	public Product execute()
+	{
 		//Validations
-		if (StringUtils.isBlank(this.apiProduct.getLookupCode())) {
+		if (StringUtils.isBlank(this.apiProduct.getLookupCode()))
+		{
 			throw new UnprocessableEntityException("lookupcode");
 		}
 
 		ProductEntity productEntity = this.productRepository.get(this.productId);
-		if (productEntity == null) { //No record with the associated record ID exists in the database.
+		if (productEntity == null)
+		{
+			//No record with the associated record ID exists in the database.
 			throw new NotFoundException("Product");
 		}
 		
@@ -37,7 +41,8 @@ public class ProductUpdateCommand implements ResultCommandInterface<Product> {
 	public UUID getProductId() {
 		return this.productId;
 	}
-	public ProductUpdateCommand setProductId(UUID productId) {
+	public ProductUpdateCommand setProductId(UUID productId)
+	{
 		this.productId = productId;
 		return this;
 	}
@@ -46,7 +51,8 @@ public class ProductUpdateCommand implements ResultCommandInterface<Product> {
 	public Product getApiProduct() {
 		return this.apiProduct;
 	}
-	public ProductUpdateCommand setApiProduct(Product apiProduct) {
+	public ProductUpdateCommand setApiProduct(Product apiProduct)
+	{
 		this.apiProduct = apiProduct;
 		return this;
 	}

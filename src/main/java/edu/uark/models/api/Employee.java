@@ -8,12 +8,14 @@ import org.apache.commons.lang3.StringUtils;
 import edu.uark.models.entities.EmployeeEntity;
 import edu.uark.models.enums.EmployeeClassification;
 
-public class Employee {
+public class Employee
+{
 	private UUID id;
 	public UUID getId() {
 		return this.id;
 	}
-	public Employee setId(UUID id) {
+	public Employee setId(UUID id)
+	{
 		this.id = id;
 		return this;
 	}
@@ -22,7 +24,8 @@ public class Employee {
 	public String getEmployeeId() {
 		return this.employeeId;
 	}
-	public Employee setEmployeeId(String employeeId) {
+	public Employee setEmployeeId(String employeeId)
+	{
 		this.employeeId = employeeId;
 		return this;
 	}
@@ -31,7 +34,8 @@ public class Employee {
 	public String getFirstName() {
 		return this.firstName;
 	}
-	public Employee setFirstName(String firstName) {
+	public Employee setFirstName(String firstName)
+	{
 		this.firstName = firstName;
 		return this;
 	}
@@ -40,7 +44,8 @@ public class Employee {
 	public String getLastName() {
 		return this.lastName;
 	}
-	public Employee setLastName(String lastName) {
+	public Employee setLastName(String lastName)
+	{
 		this.lastName = lastName;
 		return this;
 	}
@@ -49,7 +54,8 @@ public class Employee {
 	public String getPassword() {
 		return this.password;
 	}
-	public Employee setPassword(String password) {
+	public Employee setPassword(String password)
+	{
 		this.password = password;
 		return this;
 	}
@@ -58,7 +64,8 @@ public class Employee {
 	public boolean getActive() {
 		return this.active;
 	}
-	public Employee setActive(boolean active) {
+	public Employee setActive(boolean active)
+	{
 		this.active = active;
 		return this;
 	}
@@ -67,7 +74,8 @@ public class Employee {
 	public int getClassification() {
 		return this.classification;
 	}
-	public Employee setClassification(int classification) {
+	public Employee setClassification(int classification)
+	{
 		this.classification = classification;
 		return this;
 	}
@@ -76,7 +84,8 @@ public class Employee {
 	public UUID getManagerId() {
 		return this.managerId;
 	}
-	public Employee setManagerId(UUID managerId) {
+	public Employee setManagerId(UUID managerId)
+	{
 		this.managerId = managerId;
 		return this;
 	}
@@ -85,12 +94,14 @@ public class Employee {
 	public LocalDateTime getCreatedOn() {
 		return this.createdOn;
 	}
-	public Employee setCreatedOn(LocalDateTime createdOn) {
+	public Employee setCreatedOn(LocalDateTime createdOn)
+	{
 		this.createdOn = createdOn;
 		return this;
 	}
 	
-	public Employee() {
+	public Employee()
+	{
 		this.active = false;
 		this.id = new UUID(0, 0);
 		this.managerId = new UUID(0, 0);
@@ -102,7 +113,8 @@ public class Employee {
 		this.classification = EmployeeClassification.NOT_DEFINED.getValue();
 	}
 	
-	public Employee(EmployeeEntity employeeEntity) {
+	public Employee(EmployeeEntity employeeEntity)
+	{
 		this.id = employeeEntity.getId();
 		this.password = StringUtils.EMPTY;
 		this.active = employeeEntity.getActive();

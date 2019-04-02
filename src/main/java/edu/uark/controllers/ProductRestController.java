@@ -20,35 +20,40 @@ import edu.uark.models.api.Product;
 
 @RestController
 @RequestMapping(value = "/api/product")
-public class ProductRestController {
+public class ProductRestController
+{
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public List<Product> getProducts() {
 		return (new ProductsQuery()).execute();
 	}
 
 	@RequestMapping(value = "/{productId}", method = RequestMethod.GET)
-	public Product getProduct(@PathVariable UUID productId) {
+	public Product getProduct(@PathVariable UUID productId)
+	{
 		return (new ProductQuery()).
 			setProductId(productId).
 			execute();
 	}
 
 	@RequestMapping(value = "/byLookupCode/{productLookupCode}", method = RequestMethod.GET)
-	public Product getProductByLookupCode(@PathVariable String productLookupCode) {
+	public Product getProductByLookupCode(@PathVariable String productLookupCode)
+	{
 		return (new ProductByLookupCodeQuery()).
 			setLookupCode(productLookupCode).
 			execute();
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public Product createProduct(@RequestBody Product product) {
+	public Product createProduct(@RequestBody Product product)
+	{
 		return (new ProductCreateCommand()).
 			setApiProduct(product).
 			execute();
 	}
 	
 	@RequestMapping(value = "/{productId}", method = RequestMethod.PUT)
-	public Product updateProduct(@PathVariable UUID productId, @RequestBody Product product) {
+	public Product updateProduct(@PathVariable UUID productId, @RequestBody Product product)
+	{
 		return (new ProductUpdateCommand()).
 			setProductId(productId).
 			setApiProduct(product).
@@ -56,7 +61,8 @@ public class ProductRestController {
 	}
 	
 	@RequestMapping(value = "/{productId}", method = RequestMethod.DELETE)
-	public void deleteProduct(@PathVariable UUID productId) {
+	public void deleteProduct(@PathVariable UUID productId)
+	{
 		(new ProductDeleteCommand()).
 			setProductId(productId).
 			execute();

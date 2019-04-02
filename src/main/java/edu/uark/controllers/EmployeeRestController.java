@@ -20,29 +20,34 @@ import edu.uark.models.api.EmployeeSignIn;
 
 @RestController
 @RequestMapping(value = "/api/employee")
-public class EmployeeRestController {
+public class EmployeeRestController
+{
 	@RequestMapping(value = "/{employeeId}", method = RequestMethod.GET)
-	public Employee getEmployee(@PathVariable UUID employeeId) {
+	public Employee getEmployee(@PathVariable UUID employeeId)
+	{
 		return (new EmployeeQuery())
 			.setEmployeeId(employeeId)
 			.execute();
 	}
 	
 	@RequestMapping(value = "/activeexists", method = RequestMethod.GET)
-	public void getActiveEmployeeExists() {
+	public void getActiveEmployeeExists()
+	{
 		(new ActiveEmployeeExistsQuery())
 			.execute();
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public Employee createEmployee(@RequestBody Employee employee) {
+	public Employee createEmployee(@RequestBody Employee employee)
+	{
 		return (new EmployeeCreateCommand())
 			.setApiEmployee(employee)
 			.execute();
 	}
 
 	@RequestMapping(value = "/{employeeId}", method = RequestMethod.PUT)
-	public Employee updateEmployee(@PathVariable UUID employeeId, @RequestBody Employee employee) {
+	public Employee updateEmployee(@PathVariable UUID employeeId, @RequestBody Employee employee)
+	{
 		return (new EmployeeUpdateCommand())
 			.setEmployeeId(employeeId)
 			.setApiEmployee(employee)
@@ -50,14 +55,16 @@ public class EmployeeRestController {
 	}
 
 	@RequestMapping(value = "/{employeeId}", method = RequestMethod.DELETE)
-	public void deleteEmployee(@PathVariable UUID employeeId) {
+	public void deleteEmployee(@PathVariable UUID employeeId)
+	{
 		(new EmployeeDeleteCommand())
 			.setEmployeeId(employeeId)
 			.execute();
 	}
 
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
-	public Employee employeeSignIn(@RequestBody EmployeeSignIn employeeSignIn) {
+	public Employee employeeSignIn(@RequestBody EmployeeSignIn employeeSignIn)
+	{
 		return (new EmployeeSignInCommand())
 			.setEmployeeSignIn(employeeSignIn)
 			.execute();
