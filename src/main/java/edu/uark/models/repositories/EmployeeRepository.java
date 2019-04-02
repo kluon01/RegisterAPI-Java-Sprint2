@@ -63,8 +63,10 @@ public class EmployeeRepository extends BaseRepository<EmployeeEntity> implement
 					.fieldName(EmployeeFieldNames.ACTIVE)
 					.comparison(SQLComparisonType.EQUALS)
 			),
-			(ps) -> {
-				try {
+			(ps) ->
+            {
+				try
+                {
 					ps.setObject(1, true);
 				} catch (SQLException e) {}
 				

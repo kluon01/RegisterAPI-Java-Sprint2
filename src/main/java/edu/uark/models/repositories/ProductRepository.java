@@ -24,10 +24,13 @@ public class ProductRepository extends BaseRepository<ProductEntity> implements 
 					fieldName(ProductFieldNames.LOOKUP_CODE).
 					comparison(SQLComparisonType.EQUALS)
 			),
-			(ps) -> {
-				try {
+			(ps) ->
+            {
+				try
+                {
 					ps.setObject(1, lookupCode.toLowerCase());
-				} catch (SQLException e) {}
+				}
+				catch (SQLException e) {}
 
 				return ps;
 			}
