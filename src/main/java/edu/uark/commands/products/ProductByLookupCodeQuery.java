@@ -41,6 +41,7 @@ public class ProductByLookupCodeQuery implements ResultCommandInterface<Product>
 		return this;
 	}
 	
+	
 	private ProductRepositoryInterface productRepository;
 	public ProductRepositoryInterface getProductRepository() {
 		return this.productRepository;
