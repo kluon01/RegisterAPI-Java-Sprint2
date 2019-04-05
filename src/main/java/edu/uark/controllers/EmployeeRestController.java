@@ -1,5 +1,6 @@
 package edu.uark.controllers;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.uark.commands.employees.*;
 import edu.uark.commands.employees.ActiveEmployeeExistsQuery;
 import edu.uark.commands.employees.EmployeeCreateCommand;
 import edu.uark.commands.employees.EmployeeDeleteCommand;
@@ -22,12 +24,25 @@ import edu.uark.models.api.EmployeeSignIn;
 @RequestMapping(value = "/api/employee")
 public class EmployeeRestController
 {
+	@RequestMapping(value = "/all", method = RequestMethod.GET)
+	public List<Employee> getEmployees()
+	{
+		return (new EmployeesQuery()).execute();
+	}
+
 	@RequestMapping(value = "/{employeeId}", method = RequestMethod.GET)
 	public Employee getEmployee(@PathVariable UUID employeeId)
 	{
 		return (new EmployeeQuery())
 			.setEmployeeId(employeeId)
 			.execute();
+	}
+
+	@RequestMapping(value = "/byHighestSales", method = RequestMethod.GET)
+	public List<Employee> getEmployeeWithHighestSales()
+	{
+		return (new EmployeesWithHighestSales(getEmployees())).
+				execute();
 	}
 	
 	@RequestMapping(value = "/activeexists", method = RequestMethod.GET)

@@ -3,6 +3,7 @@ package edu.uark.controllers;
 import java.util.List;
 import java.util.UUID;
 
+import edu.uark.commands.products.*;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,12 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.uark.commands.products.ProductByLookupCodeQuery;
-import edu.uark.commands.products.ProductCreateCommand;
-import edu.uark.commands.products.ProductDeleteCommand;
-import edu.uark.commands.products.ProductQuery;
-import edu.uark.commands.products.ProductUpdateCommand;
-import edu.uark.commands.products.ProductsQuery;
 import edu.uark.models.api.Product;
 
 @RestController
@@ -23,7 +18,8 @@ import edu.uark.models.api.Product;
 public class ProductRestController
 {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public List<Product> getProducts() {
+	public List<Product> getProducts()
+	{
 		return (new ProductsQuery()).execute();
 	}
 
@@ -41,6 +37,13 @@ public class ProductRestController
 		return (new ProductByLookupCodeQuery()).
 			setLookupCode(productLookupCode).
 			execute();
+	}
+
+	@RequestMapping(value = "/byHighestCount", method = RequestMethod.GET)
+	public List<Product> getProductWithHighestCount()
+	{
+		return (new ProductWithHighestCount(getProducts())).
+				execute();
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)

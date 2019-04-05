@@ -6,11 +6,14 @@ import edu.uark.dataaccess.repository.BaseRepository;
 import edu.uark.dataaccess.repository.DatabaseTable;
 import edu.uark.dataaccess.repository.helpers.PostgreFunctionType;
 import edu.uark.dataaccess.repository.helpers.SQLComparisonType;
+import edu.uark.dataaccess.repository.helpers.SQLConditionalType;
 import edu.uark.dataaccess.repository.helpers.where.WhereClause;
 import edu.uark.dataaccess.repository.helpers.where.WhereContainer;
 import edu.uark.models.entities.ProductEntity;
 import edu.uark.models.entities.fieldnames.ProductFieldNames;
 import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
+
+import javax.validation.constraints.Max;
 
 public class ProductRepository extends BaseRepository<ProductEntity> implements ProductRepositoryInterface {
 	@Override
@@ -36,7 +39,7 @@ public class ProductRepository extends BaseRepository<ProductEntity> implements 
 			}
 		);
 	}
-	
+
 	@Override
 	public ProductEntity createOne() {
 		return new ProductEntity();

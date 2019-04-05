@@ -43,9 +43,40 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 	}
 
 	private int employeeId;
+	private String firstName;
+	private String lastName;
+	private String password;
+	private boolean active;
+	private EmployeeClassification classification;
+	private UUID managerId;
+	private int sales;
+
 	public int getEmployeeId() {
 		return this.employeeId;
 	}
+	public String getFirstName() {
+		return this.firstName;
+	}
+	public String getLastName() {
+		return this.lastName;
+	}
+	public String getPassword() {
+		return this.password;
+	}
+	public boolean getActive() {
+		return this.active;
+	}
+	public EmployeeClassification getClassification() {
+		return this.classification;
+	}
+	public UUID getManagerId() {
+		return this.managerId;
+	}
+	public int getSales() {
+		return this.sales;
+	}
+
+
 	public String getEmployeeIdAsString()
 	{
 		return StringUtils.leftPad(
@@ -54,10 +85,6 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		);
 	}
 
-	private String firstName;
-	public String getFirstName() {
-		return this.firstName;
-	}
 	public EmployeeEntity setFirstName(String firstName)
 	{
 		if (!StringUtils.equals(this.firstName, firstName))
@@ -69,10 +96,6 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		return this;
 	}
 
-	private String lastName;
-	public String getLastName() {
-		return this.lastName;
-	}
 	public EmployeeEntity setLastName(String lastName)
 	{
 		if (!StringUtils.equals(this.lastName, lastName))
@@ -84,10 +107,6 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		return this;
 	}
 
-	private String password;
-	public String getPassword() {
-		return this.password;
-	}
 	public EmployeeEntity setPassword(String password) {
 		if (!StringUtils.equals(this.password, password)) {
 			this.password = password;
@@ -97,10 +116,6 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		return this;
 	}
 
-	private boolean active;
-	public boolean getActive() {
-		return this.active;
-	}
 	public EmployeeEntity setActive(boolean active)
 	{
 		if (this.active != active)
@@ -112,10 +127,6 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		return this;
 	}
 
-	private EmployeeClassification classification;
-	public EmployeeClassification getClassification() {
-		return this.classification;
-	}
 	public EmployeeEntity setClassification(EmployeeClassification classification)
 	{
 		if (this.classification != classification)
@@ -127,10 +138,6 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		return this;
 	}
 
-	private UUID managerId;
-	public UUID getManagerId() {
-		return this.managerId;
-	}
 	public EmployeeEntity setManagerId(UUID managerId)
 	{
 		if (!this.managerId.equals(managerId))
@@ -141,6 +148,17 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		
 		return this;
 	}
+
+	public EmployeeEntity setSales(int sales)
+	{
+		if (this.sales != sales)
+		{
+			this.sales = sales;
+			this.propertyChanged(EmployeeFieldNames.SALES);
+		}
+
+		return this;
+	}
 	
 	public Employee synchronize(Employee apiEmployee)
 	{
@@ -149,6 +167,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		this.setFirstName(apiEmployee.getFirstName());
 		this.setManagerId(apiEmployee.getManagerId());
 		this.setClassification(EmployeeClassification.map(apiEmployee.getClassification()));
+		this.setSales(apiEmployee.getSales());
 		if (!StringUtils.isBlank(apiEmployee.getPassword()))
 		{
 			this.setPassword(
@@ -195,6 +214,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		this.password = StringUtils.EMPTY;
 		this.firstName = StringUtils.EMPTY;
 		this.classification = EmployeeClassification.NOT_DEFINED;
+		this.sales = 0;
 	}
 
 	public EmployeeEntity(Employee apiEmployee)
@@ -205,6 +225,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		this.lastName = apiEmployee.getLastName();
 		this.firstName = apiEmployee.getFirstName();
 		this.managerId = apiEmployee.getManagerId();
+		this.sales = apiEmployee.getSales();
 		this.classification = EmployeeClassification.map(apiEmployee.getClassification());
 		this.password = EmployeeEntity.hashPassword(
 			apiEmployee.getPassword()

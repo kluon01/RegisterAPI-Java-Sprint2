@@ -8,39 +8,44 @@ import edu.uark.models.entities.ProductEntity;
 public class Product
 {
 	private UUID id;
+	private String lookupCode;
+	private int count;
+	private LocalDateTime createdOn;
+
 	public UUID getId() {
 		return this.id;
 	}
+
+	public String getLookupCode() {
+		return this.lookupCode;
+	}
+
+	public int getCount() {
+		return this.count;
+	}
+
+	public LocalDateTime getCreatedOn() {
+		return this.createdOn;
+	}
+
 	public Product setId(UUID id)
 	{
 		this.id = id;
 		return this;
 	}
-	
-	private String lookupCode;
-	public String getLookupCode() {
-		return this.lookupCode;
-	}
+
 	public Product setLookupCode(String lookupCode)
 	{
 		this.lookupCode = lookupCode;
 		return this;
 	}
-	
-	private int count;
-	public int getCount() {
-		return this.count;
-	}
+
 	public Product setCount(int count)
 	{
 		this.count = count;
 		return this;
 	}
-	
-	private LocalDateTime createdOn;
-	public LocalDateTime getCreatedOn() {
-		return this.createdOn;
-	}
+
 	public Product setCreatedOn(LocalDateTime createdOn)
 	{
 		this.createdOn = createdOn;

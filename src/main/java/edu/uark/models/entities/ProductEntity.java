@@ -13,6 +13,39 @@ import edu.uark.models.entities.fieldnames.ProductFieldNames;
 
 public class ProductEntity extends BaseEntity<ProductEntity>
 {
+	private String lookupCode;
+	private int count;
+
+	public String getLookupCode() {
+		return this.lookupCode;
+	}
+	public int getCount() {
+		return this.count;
+	}
+
+
+	public ProductEntity setLookupCode(String lookupCode)
+	{
+		if (!StringUtils.equals(this.lookupCode, lookupCode))
+		{
+			this.lookupCode = lookupCode;
+			this.propertyChanged(ProductFieldNames.LOOKUP_CODE);
+		}
+
+		return this;
+	}
+
+	public ProductEntity setCount(int count)
+	{
+		if (this.count != count)
+		{
+			this.count = count;
+			this.propertyChanged(ProductFieldNames.COUNT);
+		}
+
+		return this;
+	}
+
 	@Override
 	protected void fillFromRecord(ResultSet rs) throws SQLException
 	{
@@ -27,36 +60,6 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 		record.put(ProductFieldNames.COUNT, this.count);
 		
 		return record;
-	}
-
-	private String lookupCode;
-	public String getLookupCode() {
-		return this.lookupCode;
-	}
-	public ProductEntity setLookupCode(String lookupCode)
-	{
-		if (!StringUtils.equals(this.lookupCode, lookupCode))
-		{
-			this.lookupCode = lookupCode;
-			this.propertyChanged(ProductFieldNames.LOOKUP_CODE);
-		}
-		
-		return this;
-	}
-
-	private int count;
-	public int getCount() {
-		return this.count;
-	}
-	public ProductEntity setCount(int count)
-	{
-		if (this.count != count)
-		{
-			this.count = count;
-			this.propertyChanged(ProductFieldNames.COUNT);
-		}
-		
-		return this;
 	}
 	
 	public Product synchronize(Product apiProduct)
