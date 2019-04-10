@@ -11,6 +11,11 @@ public class Product
 	private String lookupCode;
 	private int count;
 	private LocalDateTime createdOn;
+	private int sold;
+
+	public int getSold() {
+		return this.sold;
+	}
 
 	public UUID getId() {
 		return this.id;

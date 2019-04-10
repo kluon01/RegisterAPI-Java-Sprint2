@@ -15,7 +15,11 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 {
 	private String lookupCode;
 	private int count;
+	private int sold;
 
+	public int getSold() {
+		return this.sold;
+	}
 	public String getLookupCode() {
 		return this.lookupCode;
 	}

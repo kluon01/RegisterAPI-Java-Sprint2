@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de2b330a-5fe2-465d-a0df-26bc1ceb8fdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeesQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeesWithHighestSales.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductWithHighestCount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/controllers/EmployeeRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/controllers/EmployeeRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductWithHighestCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductWithHighestSold.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/controllers/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/controllers/ProductRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/models/api/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/models/api/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/models/api/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/models/api/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/EmployeeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/EmployeeEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/ProductEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/EmployeeFieldNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/EmployeeFieldNames.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/ProductFieldNames.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/ProductFieldNames.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/ProductRepository.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,60 +23,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/controllers/ProductRestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#710#711#0" expanded="true" />
-                <element signature="e#755#756#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/controllers/EmployeeRestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="43" column="58" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1043#1044#0" expanded="true" />
-                <element signature="e#1088#1089#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeesWithHighestSales.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#735#745#0" expanded="true" />
-                <element signature="e#1309#1310#0" expanded="true" />
-                <element signature="e#1393#1394#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductWithHighestCount.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductWithHighestSold.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="595">
+              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#721#730#0" expanded="true" />
-                <element signature="e#2054#2055#0" expanded="true" />
-                <element signature="e#2138#2139#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/api/Product.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="15" selection-start-line="15" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <element signature="e#303#304#0" expanded="true" />
+                <element signature="e#327#328#0" expanded="true" />
+                <element signature="e#389#390#0" expanded="true" />
+                <element signature="e#413#414#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/ProductEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/ProductFieldNames.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -91,26 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/api/Employee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="134" column="53" lean-forward="true" selection-start-line="134" selection-start-column="53" selection-end-line="134" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/EmployeeEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2696">
-              <caret line="223" column="46" lean-forward="true" selection-start-line="223" selection-start-column="46" selection-end-line="223" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/EmployeeFieldNames.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+            <state relative-caret-position="1620">
+              <caret line="134" column="53" selection-start-line="134" selection-start-column="53" selection-end-line="134" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -118,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductsQuery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="150">
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeesQuery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="330">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,19 +161,20 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/api/EmployeeSignIn.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/interfaces/EmployeeRepositoryInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/EmployeeRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/ProductEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/ProductFieldNames.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/ProductRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/interfaces/ProductRepositoryInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/api/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeesQuery.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/uark/controllers/ProductRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/controllers/EmployeeRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/api/Employee.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/EmployeeFieldNames.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/EmployeeEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeesWithHighestSales.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/api/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/ProductFieldNames.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/uark/models/entities/ProductEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductWithHighestCount.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductWithHighestSold.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/uark/controllers/ProductRestController.java" />
       </list>
     </option>
   </component>
@@ -371,7 +358,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554488897907" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554917383581" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../RegisterAPI-Java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -412,7 +399,8 @@
       <workItem from="1554220630409" duration="2231000" />
       <workItem from="1554321988958" duration="4863000" />
       <workItem from="1554477631815" duration="105000" />
-      <workItem from="1554482695078" duration="5325000" />
+      <workItem from="1554482695078" duration="5764000" />
+      <workItem from="1554916936707" duration="430000" />
     </task>
     <task id="LOCAL-00001" summary="Changed lots of braces to be on next line">
       <created>1554223212637</created>
@@ -421,16 +409,24 @@
       <option name="project" value="LOCAL" />
       <updated>1554223212637</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added queries for employee with most sales and products with highest count. Both these queries will return a list of either Employee and Product. Added sale property to employee classes. Re arranged code for readability.">
+      <created>1554489032708</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554489032708</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13270000" />
+    <option name="totallyTimeSpent" value="14139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1920" height="1040" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18089648" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18303095" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -448,7 +444,7 @@
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" />
       <window_info anchor="bottom" id="Spring" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3286026" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3286026" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32969433" />
@@ -567,24 +563,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductUpdateCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/interfaces/EmployeeRepositoryInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeeCreateCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -623,38 +605,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/ProductRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/ProductFieldNames.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/ProductEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/api/EmployeeSignIn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/api/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -665,22 +619,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/controllers/ProductRestController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/controllers/EmployeeRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="330">
+          <caret line="43" column="58" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#710#711#0" expanded="true" />
-            <element signature="e#755#756#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/api/Employee.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/EmployeeEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="134" column="53" lean-forward="true" selection-start-line="134" selection-start-column="53" selection-end-line="134" selection-end-column="53" />
+        <state relative-caret-position="2910">
+          <caret line="223" column="46" selection-start-line="223" selection-start-column="46" selection-end-line="223" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -691,59 +643,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/EmployeeRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductsQuery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/EmployeeEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2696">
-          <caret line="223" column="46" lean-forward="true" selection-start-line="223" selection-start-column="46" selection-end-line="223" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/controllers/EmployeeRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="43" column="58" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="58" />
+        <state relative-caret-position="150">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1043#1044#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeesQuery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="330">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductWithHighestCount.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/api/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="180">
+          <caret line="15" selection-start-line="15" selection-end-line="17" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#721#730#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2138#2139#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductsQuery.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/api/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        <state relative-caret-position="1620">
+          <caret line="134" column="53" selection-start-line="134" selection-start-column="53" selection-end-line="134" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeeCreateCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductUpdateCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/products/ProductWithHighestSold.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -752,13 +709,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/commands/employees/EmployeesWithHighestSales.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#735#745#0" expanded="true" />
-            <element signature="e#1309#1310#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/ProductRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/repositories/EmployeeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/ProductEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/models/entities/fieldnames/ProductFieldNames.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/uark/controllers/ProductRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
