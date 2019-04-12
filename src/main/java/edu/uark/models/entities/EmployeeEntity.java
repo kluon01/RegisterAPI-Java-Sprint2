@@ -27,6 +27,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		this.managerId = ((UUID) rs.getObject(EmployeeFieldNames.MANAGER_ID));
 		this.password = new String((byte[]) rs.getObject(EmployeeFieldNames.PASSWORD));
 		this.classification = EmployeeClassification.map(rs.getInt(EmployeeFieldNames.CLASSIFICATION));
+		this.sales = rs.getInt(EmployeeFieldNames.SALES);
 	}
 
 	@Override
@@ -38,6 +39,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity>
 		record.put(EmployeeFieldNames.MANAGER_ID, this.managerId);
 		record.put(EmployeeFieldNames.PASSWORD, this.password.getBytes());
 		record.put(EmployeeFieldNames.CLASSIFICATION, this.classification.getValue());
+		record.put(EmployeeFieldNames.SALES, this.sales);
 
 		return record;
 	}
