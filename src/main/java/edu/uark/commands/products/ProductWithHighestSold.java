@@ -23,10 +23,10 @@ public class ProductWithHighestSold implements ResultCommandInterface<List<Produ
 
         sortProductsBySold(allproducts);
 
-        int maxcount = allproducts.get(0).getSold();
+        int maxsold = allproducts.get(0).getSold();
         for(int x = 0; x < allproducts.size(); x++)
         {
-            if(allproducts.get(x).getSold() == maxcount)
+            if(allproducts.get(x).getSold() == maxsold)
             {
                 topproducts.add(allproducts.get(x));
             }

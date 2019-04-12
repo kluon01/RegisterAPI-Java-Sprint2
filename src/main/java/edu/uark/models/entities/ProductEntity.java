@@ -50,6 +50,17 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 		return this;
 	}
 
+	public ProductEntity setSold(int sold)
+	{
+		if(this.sold != sold)
+		{
+			this.sold = sold;
+			this.propertyChanged(ProductFieldNames.SOLD);
+		}
+
+		return this;
+	}
+
 	@Override
 	protected void fillFromRecord(ResultSet rs) throws SQLException
 	{
@@ -70,7 +81,8 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 	{
 		this.setCount(apiProduct.getCount());
 		this.setLookupCode(apiProduct.getLookupCode());
-		
+		this.setSold(apiProduct.getSold());
+
 		apiProduct.setId(this.getId());
 		apiProduct.setCreatedOn(this.getCreatedOn());
 		
@@ -83,6 +95,7 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 		
 		this.count = -1;
 		this.lookupCode = StringUtils.EMPTY;
+		this.sold = 0;
 	}
 	
 	public ProductEntity(Product apiProduct)
@@ -91,5 +104,6 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 		
 		this.count = apiProduct.getCount();
 		this.lookupCode = apiProduct.getLookupCode();
+		this.sold = apiProduct.getSold();
 	}
 }
