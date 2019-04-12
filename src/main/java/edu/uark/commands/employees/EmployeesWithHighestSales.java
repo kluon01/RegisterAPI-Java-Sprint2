@@ -13,26 +13,24 @@ import java.util.stream.Collectors;
 
 public class EmployeesWithHighestSales implements ResultCommandInterface<List<Employee>>
 {
-    private String lookupCode;
     private EmployeeRepositoryInterface employeeRepository;
     private ArrayList<Employee> allemployees;
 
     @Override
     public List<Employee> execute()
     {
-        List<Employee> topproducts = new ArrayList<Employee>();
+        List<Employee> topemployee = new ArrayList<Employee>();
+        int count = 10;
 
         sortEmployeesBySales(allemployees);
 
-        int maxsalecount = allemployees.get(0).getSales();
-        for(int x = 0; x < allemployees.size(); x++)
-        {
-            if(allemployees.get(x).getSales() == maxsalecount)
-            {
-                topproducts.add(allemployees.get(x));
-            }
-        }
-        return topproducts;
+        if(allemployees.size()< 10)
+            count = allemployees.size();
+
+        for(int x = 0; x < count; x++)
+            topemployee.add(allemployees.get(x));
+
+        return topemployee;
     }
 
     public static void sortEmployeesBySales(List<Employee> p)

@@ -20,17 +20,16 @@ public class ProductWithHighestSold implements ResultCommandInterface<List<Produ
     public List<Product> execute()
     {
         List<Product> topproducts = new ArrayList<Product>();
+        int count = 10;
 
         sortProductsBySold(allproducts);
 
-        int maxsold = allproducts.get(0).getSold();
-        for(int x = 0; x < allproducts.size(); x++)
-        {
-            if(allproducts.get(x).getSold() == maxsold)
-            {
+        if(allproducts.size() < 10)
+            count = allproducts.size();
+
+        for(int x = 0; x < count; x++)
                 topproducts.add(allproducts.get(x));
-            }
-        }
+
         return topproducts;
     }
 
