@@ -66,6 +66,7 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 	{
 		this.lookupCode = rs.getString(ProductFieldNames.LOOKUP_CODE);
 		this.count = rs.getInt(ProductFieldNames.COUNT);
+		this.sold = rs.getInt(ProductFieldNames.SOLD);
 	}
 
 	@Override
@@ -73,6 +74,7 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 	{
 		record.put(ProductFieldNames.LOOKUP_CODE, this.lookupCode);
 		record.put(ProductFieldNames.COUNT, this.count);
+		record.put(ProductFieldNames.SOLD, this.sold);
 		
 		return record;
 	}
