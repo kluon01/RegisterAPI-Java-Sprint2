@@ -39,7 +39,7 @@ public class ProductRestController
 			execute();
 	}
 
-	@RequestMapping(value = "/byHighestCount", method = RequestMethod.GET)
+	@RequestMapping(value = "/byHighestSold", method = RequestMethod.GET)
 	public List<Product> getProductWithHighestSold()
 	{
 		return (new ProductWithHighestSold(getProducts())).
