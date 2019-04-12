@@ -63,6 +63,7 @@ public class Product
 		this.lookupCode = "";
 		this.id = new UUID(0, 0);
 		this.createdOn = LocalDateTime.now();
+		this.sold = 0;
 	}
 	
 	public Product(ProductEntity productEntity)
@@ -71,5 +72,6 @@ public class Product
 		this.count = productEntity.getCount();
 		this.createdOn = productEntity.getCreatedOn();
 		this.lookupCode = productEntity.getLookupCode();
+		this.sold = productEntity.getSold();
 	}
 }
