@@ -30,7 +30,7 @@ public class productTransactionCommand implements ResultCommandInterface <ArrayL
                 throw new UnprocessableEntityException("lookupcode");
             }
 
-            product.setCount(product.getCount() - 1);
+            product.setCount(product.getCount() - 1); // Product was involved with a transaction so there is 1 less of it
 
             ProductEntity productEntity = this.productRepository.get(product.getId());
 
