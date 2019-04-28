@@ -12,26 +12,15 @@ public class Product
 	private int count;
 	private LocalDateTime createdOn;
 	private int sold;
+	private double price;
 
-	public int getSold() {
-		return this.sold;
-	}
+	public int getSold() { return this.sold; }
+	public UUID getId() { return this.id; }
+	public String getLookupCode() { return this.lookupCode; }
+	public int getCount() { return this.count; }
+	public LocalDateTime getCreatedOn() { return this.createdOn; }
 
-	public UUID getId() {
-		return this.id;
-	}
-
-	public String getLookupCode() {
-		return this.lookupCode;
-	}
-
-	public int getCount() {
-		return this.count;
-	}
-
-	public LocalDateTime getCreatedOn() {
-		return this.createdOn;
-	}
+	public double getPrice() { return this.price; }
 
 	public Product setId(UUID id)
 	{
@@ -56,6 +45,12 @@ public class Product
 		this.createdOn = createdOn;
 		return this;
 	}
+
+	public Product setPrice(double price)
+	{
+		this.price = price;
+		return this;
+	}
 	
 	public Product()
 	{
@@ -64,6 +59,7 @@ public class Product
 		this.id = new UUID(0, 0);
 		this.createdOn = LocalDateTime.now();
 		this.sold = 0;
+		this.price = 0.0;
 	}
 	
 	public Product(ProductEntity productEntity)
@@ -73,5 +69,6 @@ public class Product
 		this.createdOn = productEntity.getCreatedOn();
 		this.lookupCode = productEntity.getLookupCode();
 		this.sold = productEntity.getSold();
+		this.price = productEntity.getPrice();
 	}
 }

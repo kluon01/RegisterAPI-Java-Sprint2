@@ -16,16 +16,12 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 	private String lookupCode;
 	private int count;
 	private int sold;
+	private double price;
 
-	public int getSold() {
-		return this.sold;
-	}
-	public String getLookupCode() {
-		return this.lookupCode;
-	}
-	public int getCount() {
-		return this.count;
-	}
+	public int getSold() { return this.sold; }
+	public String getLookupCode() { return this.lookupCode; }
+	public int getCount() { return this.count; }
+	public double getPrice() { return this.price; }
 
 
 	public ProductEntity setLookupCode(String lookupCode)
@@ -61,12 +57,24 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 		return this;
 	}
 
+	public ProductEntity setPrice(double price)
+	{
+		if(this.price != price)
+		{
+			this.price = price;
+			this.propertyChanged(ProductFieldNames.PRICE);
+		}
+
+		return this;
+	}
+
 	@Override
 	protected void fillFromRecord(ResultSet rs) throws SQLException
 	{
 		this.lookupCode = rs.getString(ProductFieldNames.LOOKUP_CODE);
 		this.count = rs.getInt(ProductFieldNames.COUNT);
 		this.sold = rs.getInt(ProductFieldNames.SOLD);
+		this.price = rs.getDouble(ProductFieldNames.PRICE);
 	}
 
 	@Override
@@ -75,7 +83,8 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 		record.put(ProductFieldNames.LOOKUP_CODE, this.lookupCode);
 		record.put(ProductFieldNames.COUNT, this.count);
 		record.put(ProductFieldNames.SOLD, this.sold);
-		
+		record.put(ProductFieldNames.PRICE, this.price);
+
 		return record;
 	}
 	
@@ -84,6 +93,7 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 		this.setCount(apiProduct.getCount());
 		this.setLookupCode(apiProduct.getLookupCode());
 		this.setSold(apiProduct.getSold());
+		this.setPrice(apiProduct.getPrice());
 
 		apiProduct.setId(this.getId());
 		apiProduct.setCreatedOn(this.getCreatedOn());
@@ -98,6 +108,7 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 		this.count = -1;
 		this.lookupCode = StringUtils.EMPTY;
 		this.sold = 0;
+		this.price = 0;
 	}
 	
 	public ProductEntity(Product apiProduct)
@@ -107,5 +118,6 @@ public class ProductEntity extends BaseEntity<ProductEntity>
 		this.count = apiProduct.getCount();
 		this.lookupCode = apiProduct.getLookupCode();
 		this.sold = apiProduct.getSold();
+		this.price = apiProduct.getPrice();
 	}
 }
