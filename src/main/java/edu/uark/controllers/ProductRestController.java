@@ -1,5 +1,6 @@
 package edu.uark.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -62,7 +63,15 @@ public class ProductRestController
 			setApiProduct(product).
 			execute();
 	}
-	
+
+	@RequestMapping(value = "/updateProducts", method = RequestMethod.PUT)
+	public ArrayList<Product> productTransaction(@RequestBody ArrayList<Product> products)
+	{
+		return (new productTransactionCommand()).
+				setProductList(products).
+				execute();
+	}
+
 	@RequestMapping(value = "/{productId}", method = RequestMethod.DELETE)
 	public void deleteProduct(@PathVariable UUID productId)
 	{

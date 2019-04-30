@@ -48,9 +48,6 @@ public class ProductUpdateCommand implements ResultCommandInterface<Product> {
 	}
 	
 	private Product apiProduct;
-	public Product getApiProduct() {
-		return this.apiProduct;
-	}
 	public ProductUpdateCommand setApiProduct(Product apiProduct)
 	{
 		this.apiProduct = apiProduct;
@@ -58,13 +55,6 @@ public class ProductUpdateCommand implements ResultCommandInterface<Product> {
 	}
 	
 	private ProductRepositoryInterface productRepository;
-	public ProductRepositoryInterface getProductRepository() {
-		return this.productRepository;
-	}
-	public ProductUpdateCommand setProductRepository(ProductRepositoryInterface productRepository) {
-		this.productRepository = productRepository;
-		return this;
-	}
 	
 	public ProductUpdateCommand() {
 		this.productRepository = new ProductRepository();
